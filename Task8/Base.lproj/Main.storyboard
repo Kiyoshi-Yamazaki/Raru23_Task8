@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LFh-V2-oMm">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="YGj-yy-TsE">
+            <objects>
+                <tabBarController id="LFh-V2-oMm" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pQL-gd-5uS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Avr-yY-Jse" kind="relationship" relationship="viewControllers" id="e8d-X4-bSH"/>
+                        <segue destination="9t2-Xr-b3U" kind="relationship" relationship="viewControllers" id="us6-rg-KkO"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4xj-ae-3GO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-42" y="-73"/>
+        </scene>
+        <!--Menu1-->
+        <scene sceneID="76D-Jd-K82">
+            <objects>
+                <viewController id="Avr-yY-Jse" customClass="FirstViewController" customModule="Task8" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YPH-Bh-jNq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vcs-jn-ifH">
+                                <rect key="frame" x="172" y="243" width="70" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="8Z8-Lv-5ub"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="hwM-FI-dtp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="9Xx-ha-aSJ">
+                                <rect key="frame" x="68" y="433" width="278" height="31"/>
+                                <connections>
+                                    <action selector="sliderAction:" destination="Avr-yY-Jse" eventType="valueChanged" id="Yf8-2L-hmG"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JAN-Je-rQB"/>
+                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                        <constraints>
+                            <constraint firstItem="vcs-jn-ifH" firstAttribute="centerX" secondItem="YPH-Bh-jNq" secondAttribute="centerX" id="7PX-yN-EGt"/>
+                            <constraint firstItem="9Xx-ha-aSJ" firstAttribute="centerX" secondItem="YPH-Bh-jNq" secondAttribute="centerX" id="Pxf-8i-bVk"/>
+                            <constraint firstItem="9Xx-ha-aSJ" firstAttribute="leading" secondItem="JAN-Je-rQB" secondAttribute="leading" constant="70" id="l1O-g3-UJe"/>
+                            <constraint firstItem="JAN-Je-rQB" firstAttribute="trailing" secondItem="9Xx-ha-aSJ" secondAttribute="trailing" constant="70" id="lOA-MN-Lso"/>
+                            <constraint firstItem="9Xx-ha-aSJ" firstAttribute="centerY" secondItem="YPH-Bh-jNq" secondAttribute="centerY" id="tB2-KH-T3w"/>
+                            <constraint firstItem="9Xx-ha-aSJ" firstAttribute="top" secondItem="vcs-jn-ifH" secondAttribute="bottom" constant="150" id="tld-3V-rsI"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Menu1" id="6xL-56-sxu"/>
+                    <connections>
+                        <outlet property="slider" destination="9Xx-ha-aSJ" id="9Yt-9i-uth"/>
+                        <outlet property="sliderValueLabel" destination="vcs-jn-ifH" id="bhB-rN-fu4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Qv-rM-EjP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="885.50724637681162" y="-384.375"/>
+        </scene>
+        <!--Menu2-->
+        <scene sceneID="6nF-Ls-VKv">
+            <objects>
+                <viewController id="9t2-Xr-b3U" customClass="SecondViewController" customModule="Task8" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YcB-om-cRt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ayo-0b-bq8">
+                                <rect key="frame" x="68" y="433" width="278" height="31"/>
+                                <connections>
+                                    <action selector="sliderAction:" destination="9t2-Xr-b3U" eventType="valueChanged" id="lQI-G0-JJe"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N5I-Tz-cG9">
+                                <rect key="frame" x="172" y="243" width="70" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="HBl-fP-ra8"/>
+                                    <constraint firstAttribute="height" constant="40" id="Iz3-1s-HoP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8GB-QO-N2q"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <constraints>
+                            <constraint firstItem="ayo-0b-bq8" firstAttribute="top" secondItem="N5I-Tz-cG9" secondAttribute="bottom" constant="150" id="1my-tB-vYJ"/>
+                            <constraint firstItem="ayo-0b-bq8" firstAttribute="leading" secondItem="8GB-QO-N2q" secondAttribute="leading" constant="70" id="aVX-B9-Zzk"/>
+                            <constraint firstItem="8GB-QO-N2q" firstAttribute="trailing" secondItem="ayo-0b-bq8" secondAttribute="trailing" constant="70" id="ceb-pF-YGo"/>
+                            <constraint firstItem="ayo-0b-bq8" firstAttribute="centerY" secondItem="YcB-om-cRt" secondAttribute="centerY" id="fbK-Hh-OJe"/>
+                            <constraint firstItem="N5I-Tz-cG9" firstAttribute="centerX" secondItem="YcB-om-cRt" secondAttribute="centerX" id="mkW-Fb-obF"/>
+                            <constraint firstItem="ayo-0b-bq8" firstAttribute="centerX" secondItem="YcB-om-cRt" secondAttribute="centerX" id="zme-0K-UrO"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Menu2" id="Nm8-zi-f3K"/>
+                    <connections>
+                        <outlet property="slider" destination="ayo-0b-bq8" id="FLL-WW-DKn"/>
+                        <outlet property="sliderValueLabel" destination="N5I-Tz-cG9" id="dRa-aq-0gq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m08-At-jtZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="886" y="277"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
