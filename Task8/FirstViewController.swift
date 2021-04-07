@@ -12,30 +12,22 @@ class FirstViewController: UIViewController {
     @IBOutlet private weak var sliderValueLabel: UILabel!
     @IBOutlet private weak var slider: UISlider!
 
-    private var sliderValueNum: Float = 0
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        if let delegate = UIApplication.shared.delegate as? AppDelegate {
-            sliderValueNum = delegate.sliderValue
-            slider.value = sliderValueNum
-            updateLabel()
-        }
+    private var appDelegate: AppDelegate? {
+        UIApplication.shared.delegate as? AppDelegate
     }
 
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        if let delegate = UIApplication.shared.delegate as? AppDelegate {
-        delegate.sliderValue = sliderValueNum
-        }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateLabel()
     }
 
     private func updateLabel() {
-        sliderValueLabel.text = String(sliderValueNum)
+        guard let sliderValue = appDelegate?.sliderValue else { return }
+        sliderValueLabel.text = String(sliderValue)
     }
 
     @IBAction private func sliderAction(_ sender: Any) {
-        sliderValueNum = slider.value
+        appDelegate?.sliderValue = slider.value
         updateLabel()
     }
 }
